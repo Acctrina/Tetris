@@ -31,29 +31,6 @@ namespace Tetris
             Width = Height;
             Height = temp;
         }
-
-        /*public void turnAntiClockwise()
-        {
-            // back the dots values into backup dots
-            // so that it can be simply used for rolling back
-            backupDots = Dots;
-
-            Dots = new int[Width, Height];
-            for (int j = 0; j < Width; j++)
-            {
-                for (int i = 0; i < Height; i++)
-                {
-                    Dots[j, i] = backupDots[Height - 1 - i, j];
-                }
-            }
-
-            var temp = Width;
-            Width = Height;
-            Height = temp;
-        }*/
-
-        // the rolling back occures when player rotating the shape
-        // but it will touch other shapes and needs to be rolled back
         public void rollback()
         {
             Dots = backupDots;
